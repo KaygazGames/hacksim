@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Terminal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <pre id="term">
+root@hacksim:~$ help
+  </pre>
+  <input id="cmd" autofocus />
+
+  <script>
+    const term = document.getElementById("term");
+    const input = document.getElementById("cmd");
+
+    const responses = {
+      help: "Komutlar: hack, clear, about",
+      hack: "Sunucuya bağlanılıyor...\nGüvenlik duvarı atlandı\nPayload enjekte edildi\nBAŞARILI",
+      about: "HackSim OS v1.0 - Kağan'ın Sistemi"
+    };
+
+    input.addEventListener("keydown", e => {
+      if (e.key === "Enter") {
+        const val = input.value.trim();
+        term.textContent += `\nroot@hacksim:~$ ${val}\n${responses[val] || "komut bulunamadı"}`;
+        input.value = "";
+      }
+    });
+  </script>
+</body>
+</html>
