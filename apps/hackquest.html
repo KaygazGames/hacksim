@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Hack Görevi</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <h2>Hack Görevi</h2>
+  <p>Görev: Gizli bir sunucuya sız. Şifre: 1337</p>
+  <input id="code" placeholder="Şifre gir..." />
+  <button onclick="check()">Gönder</button>
+  <p id="result"></p>
+
+  <script>
+    function check() {
+      const code = document.getElementById("code").value;
+      document.getElementById("result").textContent =
+        code === "1337" ? "Görev başarıyla tamamlandı!" : "Hatalı kod.";
+    }
+  </script>
+</body>
+</html>
