@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <h2>Canlı Chat</h2>
+  <div id="log" style="height:200px; overflow:auto; background:black; color:lime;"></div>
+  <input id="msg" placeholder="Mesaj yaz..." />
+  <script>
+    const ws = new WebSocket("wss://your-server.glitch.me"); // Örnek WebSocket sunucu
+    const log = document.getElementById("log");
+
+    ws.onmessage = e => {
+      log.innerHTML += `<div>${e.data}</div>`;
+      log.scrollTop = log.scrollHeight;
+    };
+
+    document.getElementById("msg").addEventListener("keydown", e => {
+      if (e.key === "Enter") {
+        ws.send(e.target.value);
+        e.target.value = "";
+      }
+    });
+  </script>
+</body>
+</html>
