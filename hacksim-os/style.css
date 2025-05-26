@@ -1,0 +1,35 @@
+body {
+  background: url('assets/bg_matrix.gif') no-repeat center center fixed;
+  background-size: cover;
+  font-family: monospace;
+  color: #00ff00;
+  margin: 0;
+  padding: 0;
+}
+
+.login {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+
+#loginBox {
+  text-align: center;
+}
+
+.icon {
+  width: 100px;
+  text-align: center;
+  margin: 20px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+#appFrame {
+  width: 100%;
+  height: 70vh;
+  border: none;
+  background: black;
+}
