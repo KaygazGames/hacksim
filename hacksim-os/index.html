@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>HACKSIM OS - Giriş</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login">
+  <div id="loginBox">
+    <h1>HACKSIM OS</h1>
+    <input type="password" id="password" placeholder="Şifre Giriniz">
+    <button onclick="login()">Giriş Yap</button>
+  </div>
+
+  <script>
+    function login() {
+      const pwd = document.getElementById("password").value;
+      if (pwd === "toor") {
+        window.location.href = "desktop.html";
+      } else {
+        alert("Erişim Reddedildi");
+      }
+    }
+  </script>
+</body>
+</html>
